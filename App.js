@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+//import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import React, { Component } from 'react';
@@ -47,7 +47,18 @@ const longarray = [-122.2848617
   ,-122.215699
   ,-122.2255243
   ,-122.1698259];
-
+/*
+  var i;
+  var fridges = 15;
+  var shelf = {
+    id: "",
+    lat: "",
+    long: ""
+  }
+  for (i = 0; i < fridges; i++) {
+    text += cars[i] + "<br>";
+  }
+*/
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
@@ -81,6 +92,9 @@ export default function App() {
   );
 }
 */
+
+
+
 
 export default () => (
   <View style={styles.container}>
