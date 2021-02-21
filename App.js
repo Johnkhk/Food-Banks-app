@@ -23,7 +23,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="MapScreen">
-        <Stack.Screen name="MapScreen" component={MapScreen} />
+        <Stack.Screen options={{headerShown: false}} name="MapScreen" component={MapScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
