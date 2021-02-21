@@ -1,8 +1,5 @@
-// Main imports
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { Component } from 'react';
-
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 
 const markerids = ["1167 59th Street"
@@ -69,6 +66,7 @@ export function importMarkers() {
     console.log('We are grabbing the ' + markerIndex + ' marker from the array.')
     console.log('title: ' + markerids[markerIndex])
     var aMarker = {
+      key: markerIndex,
       title: markerids[markerIndex],
       description: 'This was the ' + markerIndex + ' marker in the array.',
       latitude: latarray[markerIndex],
@@ -80,6 +78,7 @@ export function importMarkers() {
 
 function getMarkers() {
   return results.details.map((importedMarker) => <Marker
+     key = {importedMarker.key}
      title = {importedMarker.title}
      coordinate = {{ latitude: importedMarker.latitude, longitude: importedMarker.longitude }}
      description = {importedMarker.description}
