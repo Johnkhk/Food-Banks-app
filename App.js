@@ -7,7 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import { MapScreen } from './MapScreen';
+import { MapScreen, importMarkers } from './MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +20,7 @@ function DetailsScreen() {
 }
 
 function App() {
+  importMarkers();
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="MapScreen">

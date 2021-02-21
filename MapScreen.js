@@ -61,6 +61,33 @@ const styles = StyleSheet.create({
   },
  });
 
+var results = { details: [] }
+
+export function importMarkers() {
+  results.details = [];
+  for (var markerIndex = 0; markerIndex < markerids.length; markerIndex++) {
+    console.log('We are grabbing the ' + markerIndex + ' marker from the array.')
+    console.log('title: ' + markerids[markerIndex])
+    var aMarker = {
+      title: markerids[markerIndex],
+      description: 'This was the ' + markerIndex + ' marker in the array.',
+      latitude: latarray[markerIndex],
+      longitude: longarray[markerIndex]
+    }
+    results.details.push(aMarker);
+  }
+}
+
+function getMarkers() {
+  return results.details.map((importedMarker) => <Marker
+     title = {importedMarker.title}
+     coordinate = {{ latitude: importedMarker.latitude, longitude: importedMarker.longitude }}
+     description = {importedMarker.description}
+   >
+   </Marker>
+  )
+}
+
 export function MapScreen() {
   return (
      <View style={styles.container}>
@@ -74,6 +101,7 @@ export function MapScreen() {
             longitudeDelta: 0.0121,
           }}
         >
+          {getMarkers()}
         </MapView>
      </View>
   );
