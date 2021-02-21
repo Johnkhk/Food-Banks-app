@@ -8,11 +8,13 @@ import 'firebase/database';
 import { doFirebaseConnect } from '../firebase';
 import { getFridges, updateFridges } from '../fridgeContainer';
 
+import { FoodSearchBar } from '../elements/SearchBar';
+
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     height: '100%',
-    width: 400,
+    width: '100%',
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
@@ -87,6 +89,7 @@ export class MapHomeScreen extends Component {
         >
           <MarkerComponent markers={this.state.fridges} />
         </MapView>
+        <FoodSearchBar></FoodSearchBar>
       </View>
     );
   }
